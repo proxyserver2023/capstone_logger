@@ -5,7 +5,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='caplogger',
-    version='0.1',
+    version='1.0.0',
     packages=find_packages(),
     description='A custom logger for Capstone',
     install_requires=requirements,
