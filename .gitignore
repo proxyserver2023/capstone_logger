@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.pyz
+*.pyzw
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Test
+.tox/
+.coverage
+.coverage.*
+.pytest_cache/
+
+# Packaging
+*.tar.gz
+*.tar.bz2
+*.tgz
+*.zip
+*.rar
+*.7z
+
+# Environments
+.env
+.venv/
+venv/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
