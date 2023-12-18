@@ -22,34 +22,36 @@ jobs:
     steps:
       - name: Echo a Dummy Secret
         run: echo "Dummy Secret is ${{ secrets.DUMMY_SECRET }}"
+      - name: Echo a Dummy Var
+        run: echo "Dummy Var is ${{ secrets.DUMMY_VAR }}"
 
-  deploy:
-    runs-on: ubuntu-latest
+  # deploy:
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: "3.x"
-      # - name: Install dependencies
-      #   run: |
-      #     python -m pip install --upgrade pip
-      #     pip install build
-      # - name: Build package
-      #   run: python -m build
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_PAT }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-      # - name: Publish package
-      #   uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
-      #   with:
-      #     user: __token__
-      #     password: ${{ secrets.PYPI_API_TOKEN }}
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Set up Python
+  #       uses: actions/setup-python@v3
+  #       with:
+  #         python-version: "3.x"
+  #     # - name: Install dependencies
+  #     #   run: |
+  #     #     python -m pip install --upgrade pip
+  #     #     pip install build
+  #     # - name: Build package
+  #     #   run: python -m build
+  #     - name: Create Release
+  #       id: create_release
+  #       uses: actions/create-release@v1
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.RELEASE_PAT }}
+  #       with:
+  #         tag_name: ${{ github.ref }}
+  #         release_name: Release ${{ github.ref }}
+  #         draft: false
+  #         prerelease: false
+  #     # - name: Publish package
+  #     #   uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+  #     #   with:
+  #     #     user: __token__
+  #     #     password: ${{ secrets.PYPI_API_TOKEN }}
