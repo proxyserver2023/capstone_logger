@@ -23,7 +23,7 @@ jobs:
       - name: Echo a Dummy Secret
         run: echo "Dummy Secret is ${{ secrets.DUMMY_SECRET }}"
       - name: Echo a Dummy Var
-        run: echo "Dummy Var is ${{ secrets.DUMMY_VAR }}"
+        run: echo "Dummy Var is ${{ vars.DUMMY_VAR }}"
 
   # deploy:
   #   runs-on: ubuntu-latest
